@@ -10,8 +10,9 @@ def main():
     chat_id = os.getenv('CHAT_ID')
     server_name = os.getenv('SERVER_NAME')
     partitions = os.getenv('PARTITIONS').split(', ')
+    language = os.getenv('LANGUAGE', 'en')
 
-    bot = TelegramBot(token, chat_id, server_name, partitions)
+    bot = TelegramBot(token, chat_id, server_name, partitions, language)
     asyncio.run(bot.send_message())
 
 if __name__ == '__main__':

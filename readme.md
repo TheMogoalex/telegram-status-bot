@@ -38,6 +38,7 @@ This project is a Telegram bot that retrieves and sends system information inclu
     CHAT_ID=your_chat_id
     SERVER_NAME=YourServerName
     PARTITIONS=/, /media/pi
+    LANGUAGE=es  # or 'en' for English
 
 5. Run the bot:
     ```sh
@@ -92,6 +93,7 @@ Este proyecto es un bot de Telegram que recupera y envía información del siste
     CHAT_ID=your_chat_id
     SERVER_NAME=YourServerName
     PARTITIONS=/, /media/pi
+    LANGUAGE=es  # or 'en' para Inglés
 
 5. Ejecuta el bot:
     ```sh
