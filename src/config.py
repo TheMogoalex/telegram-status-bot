@@ -62,7 +62,7 @@ class ConfigLoader:
             telegram_chat_id=chat_id,
             server_name=self._required_text("SERVER_NAME"),
             disk_partitions=self._partitions("DISK_PARTITIONS", default="/"),
-            language=self._language("LANGUAGE", default="en"),
+            language=self._language("REPORT_LANGUAGE", default="en"),
             disk_usage_alert_percent=self._float(
                 "DISK_USAGE_ALERT_PERCENT",
                 default=80.0,
@@ -153,7 +153,7 @@ class ConfigLoader:
         if value not in SUPPORTED_LANGUAGES:
             supported = ", ".join(sorted(SUPPORTED_LANGUAGES))
             raise ConfigError(
-                f"Unsupported LANGUAGE value: {value!r}. Supported values: {supported}."
+                f"Unsupported REPORT_LANGUAGE value: {value!r}. Supported values: {supported}."
             )
         return value
 

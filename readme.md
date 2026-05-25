@@ -43,7 +43,7 @@ Alerts:
 
 - One-shot execution: perfect for cron or manual checks.
 - Plain-text Telegram messages, with no Markdown or HTML formatting.
-- English and Spanish reports through `LANGUAGE=en` or `LANGUAGE=es`.
+- English and Spanish reports through `REPORT_LANGUAGE=en` or `REPORT_LANGUAGE=es`.
 - Config validation with clear startup errors.
 - Safe dry-run mode that prints the report without touching Telegram.
 - Graceful degradation for missing CPU temperature, unreadable partitions, or unavailable host paths.
@@ -91,7 +91,7 @@ Minimal `.env` example:
 TELEGRAM_BOT_TOKEN=123456789:replace-with-your-bot-token
 TELEGRAM_CHAT_ID=123456789
 SERVER_NAME=my-linux-server
-LANGUAGE=en
+REPORT_LANGUAGE=en
 DISK_PARTITIONS=/,/data
 DISK_USAGE_ALERT_PERCENT=80
 RAM_USAGE_ALERT_PERCENT=85
@@ -112,7 +112,7 @@ TELEGRAM_REQUEST_TIMEOUT_SECONDS=10
 | `TELEGRAM_CHAT_ID` | Yes for normal mode | none | Target Telegram chat ID or channel ID. Not required for `--dry-run`. |
 | `SERVER_NAME` | Yes | none | Name shown at the top of the report. |
 | `DISK_PARTITIONS` | No | `/` | Comma-separated absolute paths to report, for example `/,/data,/mnt/backup`. |
-| `LANGUAGE` | No | `en` | Report language. Supported values: `en`, `es`. |
+| `REPORT_LANGUAGE` | No | `en` | Report language. Supported values: `en`, `es`. |
 | `DISK_USAGE_ALERT_PERCENT` | No | `80` | Alert when a configured disk is above this used percentage. Set to `0` to disable. |
 | `RAM_USAGE_ALERT_PERCENT` | No | `85` | Alert when RAM usage is above this percentage. Set to `0` to disable. |
 | `CPU_TEMPERATURE_ALERT_CELSIUS` | No | `75` | Alert when CPU temperature is above this value. Set to `0` to disable. |
@@ -295,7 +295,7 @@ Alertas:
 
 - Ejecución one-shot: ideal para cron o comprobaciones manuales.
 - Mensajes de Telegram en texto plano, sin Markdown ni HTML.
-- Informes en inglés y español mediante `LANGUAGE=en` o `LANGUAGE=es`.
+- Informes en inglés y español mediante `REPORT_LANGUAGE=en` o `REPORT_LANGUAGE=es`.
 - Validación de configuración con errores claros al arrancar.
 - Modo seguro `--dry-run` que imprime el informe sin tocar Telegram.
 - Degradación elegante si falta la temperatura CPU, una partición no existe o un path del host no está disponible.
@@ -343,7 +343,7 @@ Ejemplo mínimo de `.env`:
 TELEGRAM_BOT_TOKEN=123456789:replace-with-your-bot-token
 TELEGRAM_CHAT_ID=123456789
 SERVER_NAME=my-linux-server
-LANGUAGE=es
+REPORT_LANGUAGE=es
 DISK_PARTITIONS=/,/data
 DISK_USAGE_ALERT_PERCENT=80
 RAM_USAGE_ALERT_PERCENT=85
@@ -364,7 +364,7 @@ TELEGRAM_REQUEST_TIMEOUT_SECONDS=10
 | `TELEGRAM_CHAT_ID` | Sí en modo normal | ninguno | Chat ID o channel ID de destino. No es necesaria en `--dry-run`. |
 | `SERVER_NAME` | Sí | ninguno | Nombre mostrado al inicio del informe. |
 | `DISK_PARTITIONS` | No | `/` | Paths absolutos separados por coma, por ejemplo `/,/data,/mnt/backup`. |
-| `LANGUAGE` | No | `en` | Idioma del informe. Valores soportados: `en`, `es`. |
+| `REPORT_LANGUAGE` | No | `en` | Idioma del informe. Valores soportados: `en`, `es`. |
 | `DISK_USAGE_ALERT_PERCENT` | No | `80` | Alerta cuando un disco configurado supera este porcentaje de uso. Pon `0` para desactivar. |
 | `RAM_USAGE_ALERT_PERCENT` | No | `85` | Alerta cuando la RAM supera este porcentaje de uso. Pon `0` para desactivar. |
 | `CPU_TEMPERATURE_ALERT_CELSIUS` | No | `75` | Alerta cuando la temperatura CPU supera este valor. Pon `0` para desactivar. |
